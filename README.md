@@ -537,7 +537,10 @@ PAGE3
 ```
 
 ## OUTPUT:
-Images will be added later.
+<img width="1600" height="811" alt="exp-9-1" src="https://github.com/user-attachments/assets/bcd2a0f1-06e7-4477-8c6f-80827d4c74ab" />
+<img width="1600" height="813" alt="exp9-2" src="https://github.com/user-attachments/assets/011d3e5a-9e02-46a1-82f8-ccec0398c668" />
+<img width="1600" height="812" alt="exp9-3" src="https://github.com/user-attachments/assets/22c630cc-26cb-41cc-86b7-ac93d2014cf4" />
+
 
 ## RESULT:
 The program to design, develop and deploy a web application for event registration is completed successfully.
