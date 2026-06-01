@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Select Event{% endblock %}
+
+{% block content %}
+<div class="card card--lg">
+  <div class="card-header">
+    <h2>Welcome, {{ user_name }}!</h2>
+    <p>Select an event to register</p>
+  </div>
+
+  <div class="events-list">
+    {% for event in events %}
+    <form method="POST" action="{{ url_for('events.register') }}">
+      <input type="hidden" name="event_id" value="{{ event.id }}">
+      <button type="submit" class="event-card {% if event.is_full %}event-card--full{% endif %}"
+              {% if event.is_full %}disabled{% endif %}>
+        <div class="event-icon">{{ event.icon }}</div>
+        <div class="event-info">
+          <h3>{{ event.name }}</h3>
+          <div class="event-meta">
+            <span>&#128197; {{ event.date }}</span>
+            <span>&#128205; {{ event.venue }}</span>
+            <span>&#128101; {{ event.registered_count }} / {{ event.max_participants }}</span>
+          </div>
+          {% if event.description %}
+            <p class="event-desc">{{ event.description }}</p>
+          {% endif %}
+          <span class="tag">{{ event.category }}</span>
+          {% if event.is_full %}
+            <span class="tag tag--full">Full</span>
+          {% else %}
+            <span class="tag tag--spots">{{ event.spots_left }} spots left</span>
+          {% endif %}
+        </div>
+      </button>
+    </form>
+    {% else %}
+      <p class="empty-state">No events available yet. Check back soon!</p>
+    {% endfor %}
+  </div>
+
+  <div class="card-footer">
+    <a href="{{ url_for('auth.logout') }}" class="btn-ghost">&#8592; Change Details</a>
+  </div>
+</div>
+{% endblock %}

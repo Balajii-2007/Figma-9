@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Registration Successful{% endblock %}
+
+{% block content %}
+<div class="card card--sm" style="text-align:center; padding:2.5rem 2.5rem 2rem;">
+  <div class="success-icon">&#10003;</div>
+  <h2 class="title-green">Thanks for Registration!</h2>
+  <p class="desc">
+    Congratulations <strong>{{ user_name }}</strong>! Your registration for
+    <strong>{{ event_name }}</strong> has been successfully completed.
+    We're excited to see you at the event!
+  </p>
+
+  <div class="next-steps">
+    <h4>What's Next?</h4>
+    <div class="next-step-item">
+      <span class="step-ico">&#128231;</span>
+      <p>A confirmation email has been sent to your email address with all event details.</p>
+    </div>
+    <div class="next-step-item">
+      <span class="step-ico">&#128197;</span>
+      <p>Complete event schedule and instructions will be shared 7 days before the event.</p>
+    </div>
+  </div>
+
+  <a href="{{ url_for('main.index') }}" class="btn-primary">Register Another Event</a>
+</div>
+{% endblock %}

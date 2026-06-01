@@ -1,0 +1,13 @@
+# ── Core ──────────────────────────────────────────────────────
+Flask>=3.0.0
+Flask-SQLAlchemy>=3.1.0
+
+# ── Testing ───────────────────────────────────────────────────
+pytest>=8.0.0
+pytest-flask>=1.3.0
+
+# ── Optional extras ───────────────────────────────────────────
+# Flask-Migrate>=4.0      # database migrations
+# Flask-WTF>=1.2          # WTForms integration + CSRF
+# python-dotenv>=1.0      # load .env automatically
+# gunicorn>=21.0          # production WSGI server
